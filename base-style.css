@@ -96,8 +96,6 @@ body {
   }
 }
 
-/***********************************fortune img*************************************/
-
 .inner-fortune {
   position: relative;
   width: 343px;
@@ -163,8 +161,6 @@ body {
     height: 182px;
   }
 }
-
-/*****************************spin-button*******************************/
 
 .btn-primary {
   font-family: "Inter", sans-serif;
@@ -245,8 +241,6 @@ body {
   outline-offset: 2px;
 }
 
-/***************************** cat podium dog *******************************************/
-
 .bg-cat-img {
   width: 168px;
   height: 308px;
@@ -297,17 +291,10 @@ body {
   }
 }
 
-/*********************************** барабан фортуни*************************************/
-
 .roulette-wheel {
-  /* width: 284px;
-  height: 284px; */
   width: 300px;
   height: 300px;
   position: absolute;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
   width: 302px;
   height: 302px;
   top: 24px;
@@ -319,13 +306,11 @@ body {
   .roulette-wheel {
     top: 41px;
     left: 50px;
-    /* transform: none; */
     width: 650px;
     height: 650px;
   }
 }
 
-/*********************************** модальне вікно*************************************/
 .prize-modal-overlay {
   position: fixed;
   top: 0;
