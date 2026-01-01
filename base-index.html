@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./reset.css" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>wheel of Fortune</title>
   </head>
   <body>
@@ -80,11 +80,38 @@
           <source srcset="/dog-desktop.webp" media="(min-width: 1920px)" />
           <img class="bg-dog-img" src="/dog-mobail.webp" alt="Dog" />
         </picture>
+        <picture>
+          <source
+            srcset="/podium-green-desktop.webp"
+            media="(min-width: 1920px)"
+          />
+          <img
+            class="bg-podium-img"
+            src="/podium-green-mobail.webp"
+            alt="Podium"
+          />
+        </picture>
       </div>
     </section>
 
     <div class="prize-modal-overlay" id="prizeModal">
       <div class="modal-content">
+        <button type="button" class="close-btn">
+          <svg
+            class="close-btn-svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.4697 5.46973C17.7626 5.17684 18.2374 5.17684 18.5303 5.46973C18.8232 5.76262 18.8232 6.23738 18.5303 6.53028L13.0606 12L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L12 13.0606L6.53028 18.5303C6.23738 18.8232 5.76262 18.8232 5.46973 18.5303C5.17684 18.2374 5.17684 17.7626 5.46973 17.4697L10.9395 12L5.46973 6.53028C5.17684 6.23738 5.17684 5.76262 5.46973 5.46973C5.76262 5.17684 6.23738 5.17684 6.53028 5.46973L12 10.9395L17.4697 5.46973Z"
+              fill="white"
+            />
+          </svg>
+        </button>
+
         <h2 class="modal-title">Claim your prize!</h2>
 
         <picture>
@@ -96,7 +123,7 @@
         </picture>
 
         <a
-          href="https://www.google.com"
+          href="#"
           rel="noopener noreferrer"
           class="btn-primary btn-primary-ac claim-button"
           >Claim</a
