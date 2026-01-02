@@ -54,7 +54,7 @@ function updateButtonState() {
 function createWheel() {
   const wheelImg = document.createElement("img");
   wheelImg.id = "wheelImage";
-  wheelImg.src = "/wheel-fortune-img-desktop.webp"; //  Шлях до зображення колеса
+  wheelImg.src = "/wheel-fortune-img-desktop.webp";
 
   wheelImg.style.position = "absolute";
   wheelImg.style.inset = "0";
@@ -121,6 +121,11 @@ function showPrizeModal() {
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
   modal.style.zIndex = "100";
+
+  // // Відтворення звуку
+  // const audio = new Audio("/prize-sound.mp3");
+  // audio.volume = 0.5; // Гучність (0.0 - 1.0)
+  // audio.play().catch((err) => console.log("Звук не відтворився:", err));
 }
 
 function showInfoModal() {
@@ -128,9 +133,6 @@ function showInfoModal() {
   if (!modal) return;
 
   modal.classList.add("active");
-  // Не блокуємо scroll, бо Prize модалка вже заблокувала
-
-  // Info модалка відкривається ПОВЕРХ Prize модалки
   modal.style.zIndex = "110";
 }
 
@@ -139,7 +141,6 @@ function closeInfoModal() {
   if (!modal) return;
 
   modal.classList.remove("active");
-  // Scroll залишається заблокованим, бо Prize модалка досі відкрита
 }
 
 function showErrorModal() {
@@ -147,12 +148,10 @@ function showErrorModal() {
   if (!modal) return;
 
   modal.classList.add("active");
-  // Не блокуємо scroll, якщо Prize модалка вже відкрита
   if (!document.getElementById("prizeModal")?.classList.contains("active")) {
     document.body.style.overflow = "hidden";
   }
 
-  // Error модалка відкривається ПОВЕРХ Prize модалки
   modal.style.zIndex = "110";
 }
 
@@ -161,7 +160,6 @@ function closeErrorModal() {
   if (!modal) return;
 
   modal.classList.remove("active");
-  // Scroll залишається заблокованим, якщо Prize модалка відкрита
   if (!document.getElementById("prizeModal")?.classList.contains("active")) {
     document.body.style.overflow = "";
   }
@@ -209,10 +207,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     .querySelector("#errorModal .ok-button")
     ?.addEventListener("click", closeErrorModal);
 
-  // "Wheel Info" відкриває Info модалку ПОВЕРХ Prize модалки (не закриваючи її)
   document.querySelector(".wheel-info")?.addEventListener("click", (e) => {
     e.preventDefault();
-    // closePrizeModal(); - видалено, Prize модалка залишається відкритою
     showInfoModal();
   });
 
