@@ -9,8 +9,6 @@ body {
 .fortune-section {
   width: 100%;
   min-height: 100vh;
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(/overlay.webp); */
   background-image: url(/overlay.webp);
   background-size: cover;
   background-position: center;
@@ -31,6 +29,22 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+    height: 1024px;
+    padding: 20px 16px;
+    background-image: url(/bg-fortuna-tablet.webp);
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    width: 1280px;
+    height: 800px;
+    padding: 80px 46px 95px;
+    background-image: url(/bg-fortuna-min-desktop.webp);
+  }
+}
 @media (min-width: 1920px) {
   .container {
     width: 1920px;
@@ -47,10 +61,23 @@ body {
   align-items: center;
   margin-bottom: 16px;
 }
+@media (min-width: 768px) {
+  .inner-text {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1280px) {
+  .inner-text {
+    width: 574px;
+    position: absolute;
+    top: 100px;
+    left: 90px;
+  }
+}
 @media (min-width: 1920px) {
   .inner-text {
     width: 838px;
-    position: absolute;
+    /* position: absolute; */
     top: 100px;
     left: 90px;
   }
@@ -62,11 +89,25 @@ body {
   margin-bottom: 10px;
   object-fit: contain;
 }
+@media (min-width: 768px) {
+  .logo-img {
+    width: 736px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 1280px) {
+  .logo-img {
+    width: 574px;
+    height: 80px;
+    margin-bottom: 40px;
+  }
+}
 @media (min-width: 1920px) {
   .logo-img {
     width: 754px;
-    height: 80px;
-    margin-bottom: 40px;
+    /* height: 80px; */
+    /* margin-bottom: 40px; */
   }
 }
 
@@ -89,7 +130,16 @@ body {
   text-shadow: 10px 15px 20px rgba(248, 227, 109, 0.4);
   padding-top: 10px;
 }
-
+@media (min-width: 768px) {
+  .title {
+    font-size: 110px;
+  }
+}
+@media (min-width: 1280px) {
+  .title {
+    font-size: 160px;
+  }
+}
 @media (min-width: 1920px) {
   .title {
     font-size: 220px;
@@ -102,7 +152,15 @@ body {
   text-align: center;
   padding: 0 10px;
 }
-
+@media (min-width: 768px) {
+  .subtitle {
+    font-size: 30px;
+  }
+}
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
 @media (min-width: 1920px) {
   .subtitle {
     font-size: 34px;
@@ -112,15 +170,31 @@ body {
 
 .inner-fortune {
   position: relative;
-  width: 343px;
-  height: 352px;
+  width: 342px;
+  height: 342px;
   z-index: 2;
+}
+@media (min-width: 768px) {
+  .inner-fortune {
+    width: 610px;
+    height: 610px;
+  }
+}
+@media (min-width: 1280px) {
+  .inner-fortune {
+    /* width: 610px;
+    height: 610px; */
+    position: absolute;
+    top: 50%; /* ???????????????? */
+    right: 40px; /* ???????????????? */
+    transform: translateY(-50%); /* ???????????????? */
+  }
 }
 @media (min-width: 1920px) {
   .inner-fortune {
     width: 760px;
     height: 760px;
-    position: absolute;
+    /* position: absolute; */
     top: 50%;
     right: 144px;
     transform: translateY(-50%);
@@ -136,6 +210,18 @@ body {
   transform: translate(50%, -50%);
   z-index: 3;
 }
+@media (min-width: 768px) {
+  .outer-wheel-img {
+    width: 610px;
+    height: 610px;
+  }
+}
+/* @media (min-width: 1280px) {
+  .outer-wheel-img {
+    width: 610px;
+    height: 610px;
+  }
+} */
 @media (min-width: 1920px) {
   .outer-wheel-img {
     width: 760px;
@@ -152,6 +238,17 @@ body {
   transform: translateX(-50%);
   z-index: 4;
 }
+@media (min-width: 768px) {
+  .arrow-fortune-img {
+    top: -19px; /* ???????????????? */
+    width: 88px;
+    height: 115px;
+  }
+}
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
 @media (min-width: 1920px) {
   .arrow-fortune-img {
     top: -19px;
@@ -169,6 +266,16 @@ body {
   transform: translate(50%, -50%);
   z-index: 4;
 }
+@media (min-width: 768px) {
+  .wheel-center-img {
+    width: 146px;
+    height: 146px;
+  }
+}
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
 @media (min-width: 1920px) {
   .wheel-center-img {
     width: 182px;
@@ -218,10 +325,25 @@ body {
   margin: 50px auto 0;
   z-index: 7;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
+  .spin-button {
+    width: 500px;
+    height: 72px;
+  }
+}
+@media (min-width: 1280px) {
   .spin-button {
     margin: 0;
     position: absolute;
+    width: 500px;
+    bottom: 145px; /* ???????????????? */
+    left: 258px; /* ???????????????? */
+  }
+}
+@media (min-width: 1920px) {
+  .spin-button {
+    /* margin: 0;
+    position: absolute; */
     width: 478px;
     height: 72px;
     bottom: 145px;
@@ -264,6 +386,19 @@ body {
   z-index: 6;
   pointer-events: none;
 }
+@media (min-width: 768px) {
+  .bg-cat-img {
+    width: 168px; /* ???????????????? */
+    height: 305px;
+  }
+}
+@media (min-width: 1280px) {
+  .bg-cat-img {
+    width: 217px;
+    height: 398px; /* ???????????????? */
+    left: 20%; /* ???????????????? */
+  }
+}
 @media (min-width: 1920px) {
   .bg-cat-img {
     width: 335px;
@@ -281,6 +416,18 @@ body {
   z-index: 6;
   pointer-events: none;
 }
+@media (min-width: 768px) {
+  .bg-dog-img {
+    width: 255px; /* ???????????????? */
+    height: 573px;
+  }
+}
+@media (min-width: 1280px) {
+  .bg-dog-img {
+    width: 204px;
+    height: 459px; /* ???????????????? */
+  }
+}
 @media (min-width: 1920px) {
   .bg-dog-img {
     width: 316px;
@@ -297,6 +444,16 @@ body {
   pointer-events: none;
   z-index: 3;
 }
+@media (min-width: 768px) {
+  .roulette-wheel {
+    width: 508px;
+    height: 508px;
+  }
+}
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
 @media (min-width: 1920px) {
   .roulette-wheel {
     top: 57px;
@@ -344,18 +501,28 @@ body {
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
     opacity 0.3s ease;
 }
-
-.prize-modal-overlay.active .modal-content {
-  transform: scale(1) translateY(0);
-  opacity: 1;
-}
-
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .modal-content {
     background-image: url(/bg-prize-desktop.webp);
     padding: 48px 48px 36px;
     width: 600px;
   }
+}
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .modal-content {
+    background-image: url(/bg-prize-desktop.webp);
+    padding: 48px 48px 36px;
+    width: 600px;
+  }
+} */
+
+.prize-modal-overlay.active .modal-content {
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 .close-btn {
@@ -368,7 +535,7 @@ body {
   height: 40px;
   transition: transform 0.35s ease;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .close-btn {
     top: 24px;
     right: 24px;
@@ -376,6 +543,18 @@ body {
     height: 46px;
   }
 }
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .close-btn {
+    top: 24px;
+    right: 24px;
+    width: 46px;
+    height: 46px;
+  }
+} */
 
 .close-btn:hover {
   transform: scale(1.15);
@@ -394,12 +573,22 @@ body {
   width: 36px;
   height: 36px;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .close-btn-svg {
     top: 28px;
     right: 28px;
   }
 }
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .close-btn-svg {
+    top: 28px;
+    right: 28px;
+  }
+} */
 
 .modal-title {
   padding-top: 20px;
@@ -409,12 +598,22 @@ body {
   text-align: center;
   margin-bottom: 16px;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .modal-title {
     font-size: 36px;
     margin-bottom: 24px;
   }
 }
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .modal-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+} */
 
 .bg-prize-img {
   width: 311px;
@@ -422,12 +621,22 @@ body {
   margin: 0 auto;
   object-fit: cover;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .bg-prize-img {
     width: 504px;
     height: 400px;
   }
 }
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .bg-prize-img {
+    width: 504px;
+    height: 400px;
+  }
+} */
 
 .claim-button {
   border-radius: 100px;
@@ -437,13 +646,24 @@ body {
   font-size: 32px;
   margin-bottom: 16px;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .claim-button {
     width: 500px;
     height: 72px;
     margin-bottom: 20px;
   }
 }
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .claim-button {
+    width: 500px;
+    height: 72px;
+    margin-bottom: 20px;
+  }
+} */
 
 .wheel-info {
   display: block;
@@ -464,11 +684,20 @@ body {
   font-size: 12px;
   margin-bottom: 16px;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .modal-text {
     font-size: 15px;
   }
 }
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .modal-text {
+    font-size: 15px;
+  }
+} */
 
 .modal-link {
   text-decoration: underline;
@@ -496,17 +725,26 @@ body {
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
     opacity 0.3s ease;
 }
-
-.prize-modal-overlay.active .modal-content-info {
-  transform: scale(1) translateY(0);
-  opacity: 1;
-}
-
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .modal-content-info {
     padding: 48px;
     width: 600px;
   }
+}
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .modal-content-info {
+    padding: 48px;
+    width: 600px;
+  }
+} */
+
+.prize-modal-overlay.active .modal-content-info {
+  transform: scale(1) translateY(0);
+  opacity: 1;
 }
 
 .lock-wrap {
@@ -535,12 +773,22 @@ body {
   text-align: center;
   margin-bottom: 12px;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .modal-subtitle {
     font-size: 24px;
     margin-bottom: 16px;
   }
 }
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .modal-subtitle {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+} */
 
 .ok-button {
   border-radius: 100px;
@@ -550,9 +798,19 @@ body {
   font-size: 32px;
   margin-top: 20px;
 }
-@media (min-width: 1920px) {
+@media (min-width: 768px) {
   .ok-button {
     width: 500px;
     height: 72px;
   }
 }
+/* @media (min-width: 1280px) {
+  . {
+  }
+} */
+/* @media (min-width: 1920px) {
+  .ok-button {
+    width: 500px;
+    height: 72px;
+  }
+} */
