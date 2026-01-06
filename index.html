@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <link rel="icon" type="image/webp" href="/favicon2.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./styles.css" />
-    <title>wheel of Fortune</title>
+    <title>Wheel of Fortune</title>
   </head>
   <body>
     <section class="fortune-section">
@@ -22,6 +22,8 @@
         <div class="inner-text">
           <picture>
             <source srcset="/logo-desctop.webp" media="(min-width: 1920px)" />
+            <source srcset="/logo-mobail.webp" media="(min-width: 1280px)" />
+            <source srcset="/logo-desctop.webp" media="(min-width: 768px)" />
             <img src="/logo-mobail.webp" alt="Logo" class="logo-img" />
           </picture>
 
@@ -31,7 +33,7 @@
           </p>
         </div>
         <div class="inner-fortune">
-          <picture>
+          <!-- <picture>
             <source
               srcset="/fortune-wheel-external-desktop.webp"
               media="(min-width: 1920px)"
@@ -41,9 +43,14 @@
               src="/fortune-wheel-external-mobail.webp"
               alt="Outer Wheel"
             />
-          </picture>
+          </picture> -->
+          <img
+            class="outer-wheel-img"
+            src="/fortune-wheel-external-desktop.webp"
+            alt="Outer Wheel"
+          />
 
-          <picture>
+          <!-- <picture>
             <source
               srcset="/fortuna-arrow-desktop.webp"
               media="(min-width: 1920px)"
@@ -53,9 +60,14 @@
               src="/fortuna-arrow-mobail.webp"
               alt="Arrow"
             />
-          </picture>
+          </picture> -->
+          <img
+            class="arrow-fortune-img"
+            src="/fortuna-arrow-desktop.webp"
+            alt="Arrow"
+          />
 
-          <picture>
+          <!-- <picture>
             <source
               srcset="/fortune-wheel-center-desktop.webp"
               media="(min-width: 1920px)"
@@ -65,7 +77,12 @@
               src="/fortune-wheel-center-mobail.webp"
               alt="Center"
             />
-          </picture>
+          </picture> -->
+          <img
+            class="wheel-center-img"
+            src="/fortune-wheel-center-desktop.webp"
+            alt="Center"
+          />
 
           <div class="roulette-wheel"></div>
         </div>
@@ -74,10 +91,14 @@
 
         <picture>
           <source srcset="/cat-desktop.webp" media="(min-width: 1920px)" />
+          <source srcset="/cat-min-desktop.webp" media="(min-width: 1280px)" />
+          <source srcset="/cat-tablet.webp" media="(min-width: 768px)" />
           <img class="bg-cat-img" src="/cat-mobail.webp" alt="Cat" />
         </picture>
         <picture>
           <source srcset="/dog-desktop.webp" media="(min-width: 1920px)" />
+          <source srcset="/dog-min-desktop.webp" media="(min-width: 1280px)" />
+          <source srcset="/dog-tablet.webp" media="(min-width: 768px)" />
           <img class="bg-dog-img" src="/dog-mobail.webp" alt="Dog" />
         </picture>
       </div>
@@ -88,10 +109,7 @@
         <h2 class="modal-title">Claim your prize!</h2>
 
         <picture>
-          <source
-            srcset="/prize-box-desktop.webp"
-            media="(min-width: 1920px)"
-          />
+          <source srcset="/prize-box-desktop.webp" media="(min-width: 768px)" />
           <img class="bg-prize-img" src="/prize-box-mobail.webp" alt="Prize" />
         </picture>
 
