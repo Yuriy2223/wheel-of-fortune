@@ -890,7 +890,7 @@ body {
   }
 }
 /* **************  ВАРІАНТ 1:  ******************/
-@keyframes bulbBlink {
+/* @keyframes bulbBlink {
   0%,
   100% {
     opacity: 1;
@@ -904,7 +904,7 @@ body {
     box-shadow: 0 0 5px 2px rgba(255, 223, 0, 0.4),
       0 0 10px 3px rgba(255, 223, 0, 0.2);
   }
-}
+} */
 
 /**************** ВАРІАНТ 2:  ******************/
 /* @keyframes bulbBlink {
@@ -944,7 +944,7 @@ body {
 
 /**************** ВАРІАНТ 3:  ******************/
 
-/* @keyframes bulbBlink {
+@keyframes bulbBlink {
   0%,
   100% {
     opacity: 1;
@@ -956,7 +956,7 @@ body {
     transform: translate(-50%, -50%) scale(0.7);
     filter: brightness(0.5);
   }
-} */
+}
 
 /**************** ВАРІАНТ 4  ******************/
 
@@ -1003,7 +1003,7 @@ body {
 } */
 
 /* ЗАТРИМКА ДЛЯ КОЖНОЇ ЛАМПОЧКИ */
-/* .light-bulb:nth-child(1) {
+.light-bulb:nth-child(1) {
   animation-delay: 0s;
 }
 .light-bulb:nth-child(2) {
@@ -1062,4 +1062,4 @@ body {
 }
 .light-bulb:nth-child(20) {
   animation-delay: 0.95s;
-} */
+}
