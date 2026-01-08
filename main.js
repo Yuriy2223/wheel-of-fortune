@@ -15,11 +15,21 @@ function createLightBulbs() {
   // Кількість лампочок
   const numberOfBulbs = 20;
 
-  // Радіус у пікселях (відсоток від розміру контейнера)
-  const radiusPercent = 44.3; // Відсоток від розміру контейнера
+  let radiusPercent;
+  const screenWidth = window.innerWidth;
+
+  if (screenWidth < 768) {
+    radiusPercent = 45.5;
+  } else if (screenWidth < 1280) {
+    radiusPercent = 44.8;
+  } else if (screenWidth < 1920) {
+    radiusPercent = 43.7;
+  } else {
+    radiusPercent = 43.7;
+  }
 
   // Зсув початку
-  const startAngle = -92; // Градуси
+  const startAngle = -90; // Градуси
 
   // Створюємо лампочки по колу
   for (let i = 0; i < numberOfBulbs; i++) {
@@ -89,7 +99,7 @@ function updateButtonState() {
 function createWheel() {
   const wheelImg = document.createElement("img");
   wheelImg.id = "wheelImage";
-  wheelImg.src = "/wheel-fortune-img-desktop.webp";
+  wheelImg.src = "/spinning-wheel.webp";
   wheelImg.style.position = "absolute";
   wheelImg.style.inset = "0";
   wheelImg.style.width = "100%";
@@ -115,10 +125,8 @@ async function spinWheel() {
   isSpinning = true;
   btn.disabled = true;
   btn.textContent = "Spinning...";
-
   spinsUsed++;
 
-  // Перший спін = індекс 2 ("Try again"), другий = індекс 0 ("500%")
   const targetIndex = spinsUsed === 1 ? 2 : 0;
   const spins = spinsUsed === 1 ? 4 : 8; //  Кількість повних обертів
 
