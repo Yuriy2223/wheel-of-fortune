@@ -7,7 +7,8 @@ body {
 }
 
 .fortune-section {
-  width: 100%;
+  /* width: 100%; */
+  min-width: 100vw;
   min-height: 100vh;
   background-image: url(/bg-section-mob.webp);
   background-size: cover;
@@ -39,17 +40,17 @@ body {
   height: 812px;
   padding: 20px 16px 80px;
   margin: 0 auto;
-  background-image: url(/bg-section-mob.webp);
-  background-size: cover;
+  /* background-image: url(/bg-section-mob.webp); */
+  /* background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 @media (min-width: 768px) {
   .container {
     width: 768px;
     height: 1024px;
     padding: 40px 74px;
-    background-image: url(/bg-section-tab.webp);
+    /* background-image: url(/bg-section-tab.webp); */
   }
 }
 @media (min-width: 1280px) {
@@ -57,7 +58,7 @@ body {
     width: 1280px;
     height: 800px;
     padding: 40px 40px 20px;
-    background-image: url(/bg-section-laptop.webp);
+    /* background-image: url(/bg-section-laptop.webp); */
   }
 }
 @media (min-width: 1920px) {
@@ -65,7 +66,7 @@ body {
     width: 1920px;
     height: 1080px;
     padding: 40px;
-    background-image: url(/bg-section-desktop.webp);
+    /* background-image: url(/bg-section-desktop.webp); */
   }
 }
 
