@@ -76,6 +76,11 @@ body {
   align-items: center;
   padding-bottom: 46px;
 }
+@media (min-width: 1280px) {
+  .inner-text {
+    padding-bottom: 30px;
+  }
+}
 
 .logo-img {
   width: 192px;
@@ -174,19 +179,13 @@ body {
   .inner-fortune {
     width: 530px;
     height: 530px;
-    position: absolute;
-    top: 56%;
-    right: 50%;
-    transform: translate(50%, -50%);
+    margin: 0 auto;
   }
 }
 @media (min-width: 1920px) {
   .inner-fortune {
     width: 700px;
     height: 700px;
-    top: 52%;
-    right: 50%;
-    transform: translate(50%, -50%);
   }
 }
 
@@ -315,14 +314,14 @@ body {
   .spin-button {
     width: 350px;
     height: 80px;
-    margin: 42.3% auto 0;
+    margin: -10px auto 0;
   }
 }
 @media (min-width: 1920px) {
   .spin-button {
     width: 500px;
     height: 100px;
-    margin: 38% auto 0;
+    margin: 16px auto 0;
   }
 }
 

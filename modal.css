@@ -27,7 +27,7 @@
   padding: 24px 16px;
   width: 343px;
   background: #0d0a0f;
-  background-image: url(/bg-prize-mobail.webp);
+  background-image: url(/bg-modal-prize-mob.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -38,22 +38,22 @@
 }
 @media (min-width: 768px) {
   .modal-content {
-    background-image: url(/bg-prize-desktop.webp);
+    background-image: url(/bg-modal-prize-tab.webp);
     padding: 48px 48px 36px;
     width: 600px;
   }
 }
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
+@media (min-width: 1280px) {
   .modal-content {
-    background-image: url(/bg-prize-desktop.webp);
+    background-image: url(/bg-modal-prize-big.webp);
+  }
+}
+@media (min-width: 1920px) {
+  .modal-content {
     padding: 48px 48px 36px;
     width: 600px;
   }
-} */
+}
 
 .prize-modal-overlay.active .modal-content {
   transform: scale(1) translateY(0);
@@ -78,18 +78,6 @@
     height: 46px;
   }
 }
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .close-btn {
-    top: 24px;
-    right: 24px;
-    width: 46px;
-    height: 46px;
-  }
-} */
 
 .close-btn:hover {
   transform: scale(1.15);
@@ -108,25 +96,8 @@
   width: 36px;
   height: 36px;
 }
-@media (min-width: 768px) {
-  .close-btn-svg {
-    top: 28px;
-    right: 28px;
-  }
-}
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .close-btn-svg {
-    top: 28px;
-    right: 28px;
-  }
-} */
 
 .modal-title {
-  padding-top: 20px;
   font-weight: 600;
   font-size: 24px;
   line-height: 1.2;
@@ -139,16 +110,6 @@
     margin-bottom: 24px;
   }
 }
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .modal-title {
-    font-size: 36px;
-    margin-bottom: 24px;
-  }
-} */
 
 .bg-prize-img {
   width: 311px;
@@ -162,18 +123,22 @@
     height: 400px;
   }
 }
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .bg-prize-img {
-    width: 504px;
-    height: 400px;
-  }
-} */
 
-.claim-button {
+.modal-btn {
+  font-family: "Inter", sans-serif;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px 0 rgba(137, 53, 225, 0.5),
+    0 6px 30px 0 rgba(69, 5, 183, 0.4), 0 4px 4px 0 rgba(48, 0, 134, 0.3),
+    inset 4px 4px 10px 0 rgba(255, 255, 255, 0.45),
+    inset -6px -4px 10px 0 rgba(0, 0, 0, 0.45);
+  background: linear-gradient(135deg, #990aff 0%, #490eb7 100%);
+  white-space: nowrap;
+  transition: all 0.35s ease;
+
   border-radius: 100px;
   width: 311px;
   height: 56px;
@@ -182,23 +147,28 @@
   margin-bottom: 16px;
 }
 @media (min-width: 768px) {
-  .claim-button {
+  .modal-btn {
     width: 500px;
     height: 72px;
     margin-bottom: 20px;
   }
 }
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .claim-button {
-    width: 500px;
-    height: 72px;
-    margin-bottom: 20px;
-  }
-} */
+
+.modal-btn:hover {
+  transform: scale(0.97);
+  background: linear-gradient(135deg, #b31aff 0%, #5c12c4 100%);
+  box-shadow: 0 0 40px 0 rgba(137, 53, 225, 0.7),
+    0 8px 35px 0 rgba(69, 5, 183, 0.5);
+}
+.modal-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 0 40px 0 rgba(137, 53, 225, 0.7),
+    0 8px 35px 0 rgba(69, 5, 183, 0.5);
+}
+.modal-btn:focus-visible {
+  outline: 2px solid #8d43ff;
+  outline-offset: 2px;
+}
 
 .wheel-info {
   display: block;
@@ -224,15 +194,6 @@
     font-size: 15px;
   }
 }
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .modal-text {
-    font-size: 15px;
-  }
-} */
 
 .modal-link {
   text-decoration: underline;
@@ -266,16 +227,6 @@
     width: 600px;
   }
 }
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .modal-content-info {
-    padding: 48px;
-    width: 600px;
-  }
-} */
 
 .prize-modal-overlay.active .modal-content-info {
   transform: scale(1) translateY(0);
@@ -314,39 +265,3 @@
     margin-bottom: 16px;
   }
 }
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .modal-subtitle {
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
-} */
-
-.ok-button {
-  border-radius: 100px;
-  width: 311px;
-  height: 56px;
-  font-weight: 800;
-  font-size: 32px;
-  margin-top: 20px;
-}
-@media (min-width: 768px) {
-  .ok-button {
-    width: 500px;
-    height: 72px;
-  }
-}
-/* @media (min-width: 1280px) {
-  . {
-  }
-} */
-/* @media (min-width: 1920px) {
-  .ok-button {
-    width: 500px;
-    height: 72px;
-  }
-} */
-/*********************************************/
