@@ -9,7 +9,7 @@ body {
 .fortune-section {
   width: 100%;
   min-height: 100vh;
-  background-image: url(/bg-section-mob.webp);
+  background-image: url(/bg-img-mob.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -19,32 +19,33 @@ body {
 }
 @media (min-width: 768px) {
   .fortune-section {
-    background-image: url(/bg-section-tab.webp);
+    background-image: url(/bg-img-tab.webp);
   }
 }
 @media (min-width: 1280px) {
   .fortune-section {
-    background-image: url(/bg-section-laptop.webp);
+    background-image: url(/bg-img-lap.webp);
   }
 }
 @media (min-width: 1920px) {
   .fortune-section {
-    background-image: url(/bg-section-desktop.webp);
+    background-image: url(/bg-img-des.webp);
   }
 }
 
 .container {
   position: relative;
-  /* width: 375px; */
   min-width: 375px;
   width: 100%;
+
   height: 812px;
   padding: 20px 16px 80px;
   margin: 0 auto;
+
+  /* border: 1px solid red; */
 }
 @media (min-width: 768px) {
   .container {
-    /* width: 768px; */
     min-width: 768px;
     height: 1024px;
     padding: 40px 74px;
@@ -52,18 +53,59 @@ body {
 }
 @media (min-width: 1280px) {
   .container {
-    /* width: 1280px; */
     min-width: 1280px;
+    max-width: 1280px;
     height: 800px;
     padding: 40px 40px 20px;
   }
 }
 @media (min-width: 1920px) {
   .container {
-    /* width: 1920px; */
     min-width: 1920px;
+    max-width: 1920px;
     height: 1080px;
     padding: 40px;
+  }
+}
+
+.container-coins {
+  /* width: 100%;
+  height: 100%; */
+  position: absolute;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(50%, -50%); */
+  width: 375px;
+  height: 812px;
+
+  background-image: url(/bg-coins-mob.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* border: 1px solid rgb(9, 224, 240); */
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .container-coins {
+    width: 768px;
+    height: 1024px;
+    margin: 0 auto;
+    background-image: url(/bg-coins-tab.webp);
+  }
+}
+@media (min-width: 1280px) {
+  .container-coins {
+    width: 1280px;
+    height: 800px;
+    background-image: url(/bg-coins-lap.webp);
+  }
+}
+@media (min-width: 1920px) {
+  .container-coins {
+    width: 1920px;
+    height: 1080px;
+    background-image: url(/bg-coins-des.webp);
   }
 }
 
@@ -73,6 +115,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding-bottom: 46px;
+
+  /* border: 1px solid blue; */
 }
 @media (min-width: 1280px) {
   .inner-text {
@@ -105,6 +149,8 @@ body {
 }
 @media (min-width: 1920px) {
   .logo-img {
+    width: 254px;
+    height: 66px;
     top: 66px;
   }
 }
@@ -167,6 +213,8 @@ body {
   width: 342px;
   height: 342px;
   z-index: 2;
+
+  /* border: 1px solid greenyellow; */
 }
 @media (min-width: 768px) {
   .inner-fortune {
@@ -195,6 +243,8 @@ body {
   right: 50%;
   transform: translate(50%, -50%);
   z-index: 3;
+
+  /* border: 1px solid black; */
 }
 @media (min-width: 768px) {
   .outer-wheel-img {
@@ -305,14 +355,15 @@ body {
   .spin-button {
     width: 350px;
     height: 80px;
-    margin: 28px auto 0;
+    /* margin: 28px auto 0; */
+    margin: 20px auto 0;
   }
 }
 @media (min-width: 1280px) {
   .spin-button {
     width: 350px;
     height: 80px;
-    margin: -10px auto 0;
+    margin: 1px auto 0;
   }
 }
 @media (min-width: 1920px) {
@@ -376,7 +427,7 @@ body {
   outline-offset: 3px;
 }
 
-.bg-cat-img {
+.bg-cat {
   width: 180px;
   height: 379px;
   position: absolute;
@@ -384,29 +435,36 @@ body {
   left: 0;
   z-index: 6;
   pointer-events: none;
+
+  /* border: 1px solid red; */
 }
 @media (min-width: 768px) {
-  .bg-cat-img {
+  .bg-cat {
     width: 268px;
     height: 427px;
   }
 }
 @media (min-width: 1280px) {
-  .bg-cat-img {
+  .bg-cat {
     width: 314px;
     height: 530px;
-    left: 4%;
+    /* left: 4%; */
+    left: 1%;
   }
 }
 @media (min-width: 1920px) {
-  .bg-cat-img {
-    width: 420px;
+  .bg-cat {
+    /* width: 420px;
     height: 723px;
+       left: 6%;
+    */
+    width: 445px;
+    height: 737px;
     left: 6%;
   }
 }
 
-.bg-dog-img {
+.bg-dog {
   width: 164px;
   height: 435px;
   position: absolute;
@@ -414,56 +472,73 @@ body {
   right: 0;
   z-index: 6;
   pointer-events: none;
+
+  /* border: 1px solid red; */
 }
 @media (min-width: 768px) {
-  .bg-dog-img {
+  .bg-dog {
     width: 251px;
     height: 519px;
   }
 }
 @media (min-width: 1280px) {
-  .bg-dog-img {
+  .bg-dog {
     width: 360px;
     height: 604px;
-    right: 1%;
+    /* right: 1%; */
+    right: -1%;
   }
 }
 @media (min-width: 1920px) {
-  .bg-dog-img {
-    width: 453px;
+  .bg-dog {
+    /* width: 453px;
     height: 824px;
-    right: 5%;
+       right: 5%;
+    */
+    width: 514px;
+    height: 800px;
+    right: 1%;
   }
 }
 
-.bg-podium-img {
-  width: 349px;
-  height: 380px;
+.podium {
+  /* width: 349px;
+  height: 380px; */
+  width: 410px;
+  height: 401px;
   position: absolute;
-  bottom: -8%;
   right: 50%;
+  bottom: -8%;
   transform: translate(50%, -50%);
   pointer-events: none;
   z-index: 1;
+
+  /* border: 1px solid beige; */
 }
 @media (min-width: 768px) {
-  .bg-podium-img {
+  .podium {
     width: 694px;
     height: 525px;
     bottom: -26%;
   }
 }
 @media (min-width: 1280px) {
-  .bg-podium-img {
-    width: 583px;
+  .podium {
+    /* width: 583px;
     height: 489px;
-    bottom: -30%;
+    bottom: -30%; */
+    width: 620px;
+    height: 536px;
+    bottom: -39%;
   }
 }
 @media (min-width: 1920px) {
-  .bg-podium-img {
-    width: 796px;
+  .podium {
+    /* width: 796px;
     height: 749px;
-    bottom: -35%;
+    bottom: -35%; */
+    width: 44%;
+    height: 58%;
+    bottom: -29%;
   }
 }
