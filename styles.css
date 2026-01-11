@@ -142,7 +142,9 @@ body {
     position: absolute;
     top: 64px;
     /* left: 120px; */
-    left: 64px;
+    top: 20px;
+    left: 0;
+    /* left: 64px; */
     width: 180px;
     height: 60px;
     margin-bottom: 0;
@@ -150,10 +152,14 @@ body {
 }
 @media (min-width: 1920px) {
   .logo-img {
-    width: 254px;
-    height: 66px;
-    top: 66px;
-    left: 154px;
+    /* width: 254px;
+    height: 66px; */
+    width: 180px;
+    height: 60px;
+    /* top: 66px; */
+    /* left: 154px; */
+    left: 0;
+    top: 65px;
   }
 }
 
@@ -451,7 +457,7 @@ body {
     /* width: 314px;
     height: 530px;
     left: 1%; */
-    width: 328px;
+    width: 316px;
     height: 524px;
     left: 2%;
   }
@@ -462,8 +468,10 @@ body {
     height: 723px;
        left: 6%;
     */
-    width: 445px;
-    height: 737px;
+    /* width: 445px;
+    height: 737px; */
+    width: 480px;
+    height: 823px;
     left: 6%;
   }
 }
@@ -491,7 +499,7 @@ body {
     height: 604px; */
     /* right: 1%; */
     /* right: -1%; */
-    width: 383px;
+    width: 364px;
     height: 572px;
     right: 0;
   }
@@ -502,8 +510,11 @@ body {
     height: 824px;
        right: 5%;
     */
-    width: 514px;
-    height: 800px;
+    /* width: 514px;
+    height: 800px; */
+    width: 544px;
+    height: 885px;
+    right: 2%;
     right: 1%;
   }
 }

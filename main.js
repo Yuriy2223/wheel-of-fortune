@@ -504,7 +504,7 @@ async function spinWheel() {
     showErrorModal();
     return;
   }
-
+  // createLightBulbs();
   playButtonClickSound();
 
   const wheel = document.getElementById("wheelImage");
@@ -626,7 +626,7 @@ window.addEventListener("resize", () => {
 document.addEventListener("DOMContentLoaded", async () => {
   await loadGameState();
 
-  createLightBulbs();
+  // createLightBulbs();
   const wheel = createWheel();
 
   currentRotation = rotationForIndex(0);
