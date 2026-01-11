@@ -66,7 +66,7 @@ function createLightBulbs() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 768) {
-    radiusPercent = 46;
+    radiusPercent = 45.6;
   } else if (screenWidth < 1280) {
     radiusPercent = 44.8;
   } else if (screenWidth < 1920) {
