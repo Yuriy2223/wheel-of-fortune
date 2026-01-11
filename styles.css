@@ -141,7 +141,8 @@ body {
   .logo-img {
     position: absolute;
     top: 64px;
-    left: 120px;
+    /* left: 120px; */
+    left: 64px;
     width: 180px;
     height: 60px;
     margin-bottom: 0;
@@ -152,6 +153,7 @@ body {
     width: 254px;
     height: 66px;
     top: 66px;
+    left: 154px;
   }
 }
 
