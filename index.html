@@ -4,89 +4,151 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta
+      name="description"
+      content="Wheel of Fortune - spin the wheel and win prizes!"
+    />
+    <meta name="keywords" content="wheel of fortune, spin, prize, game, win" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pattaya&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./reset.css" />
-    <link rel="stylesheet" href="./modal.css" />
-    <link rel="stylesheet" href="./spinning-wheel.css" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Wheel of Fortune</title>
   </head>
   <body>
-    <section class="fortune-section">
-      <div class="container-coins"></div>
-      <div class="container">
-        <div class="inner-text">
+    <main>
+      <section class="fortune-section">
+        <div class="container-coins" aria-hidden="true"></div>
+        <div class="container">
+          <header class="inner-text">
+            <picture>
+              <source srcset="/logo-big.webp" media="(min-width: 1280px)" />
+              <source srcset="/logo-tab.webp" media="(min-width: 768px)" />
+              <img
+                src="/logo-mob.webp"
+                alt="Wheel of Fortune logo"
+                class="logo-img"
+              />
+            </picture>
+
+            <h1 class="title">Wheel of Fortune</h1>
+            <p class="subtitle">Two spins — double the chance!</p>
+          </header>
+
+          <article class="inner-fortune">
+            <img
+              class="outer-wheel-img"
+              src="/outer-wheel.webp"
+              alt="Outer wheel frame"
+              aria-hidden="true"
+            />
+
+            <img
+              class="arrow-fortune-img"
+              src="/wheel-arrow.webp"
+              alt="Wheel pointer arrow"
+            />
+
+            <img
+              class="wheel-center-img"
+              src="/wheel-center.webp"
+              alt="Wheel center"
+              aria-hidden="true"
+            />
+
+            <div class="roulette-wheel"></div>
+          </article>
+
+          <button
+            class="spin-button"
+            type="button"
+            aria-label="Spin the wheel"
+            aria-live="polite"
+          >
+            Spin
+          </button>
+
           <picture>
-            <source srcset="/logo-big.webp" media="(min-width: 1280px)" />
-            <source srcset="/logo-tab.webp" media="(min-width: 768px)" />
-            <img src="/logo-mob.webp" alt="Logo" class="logo-img" />
+            <source srcset="/cat-des.webp" media="(min-width: 1280px)" />
+            <source srcset="/cat-tab.webp" media="(min-width: 768px)" />
+            <img
+              class="bg-cat"
+              src="/cat-mob.webp"
+              alt="Decorative cat image"
+              aria-hidden="true"
+            />
+          </picture>
+          <picture>
+            <source srcset="/dog-des.webp" media="(min-width: 1280px)" />
+            <source srcset="/dog-tab.webp" media="(min-width: 768px)" />
+            <img
+              class="bg-dog"
+              src="/dog-mob.webp"
+              alt="Decorative dog image"
+              aria-hidden="true"
+            />
           </picture>
 
-          <h1 class="title">Wheel of Fortune</h1>
-          <p class="subtitle">Two spins — double the chance!</p>
-        </div>
-        <div class="inner-fortune">
           <img
-            class="outer-wheel-img"
-            src="/outer-wheel.webp"
-            alt="Outer Wheel"
+            class="podium"
+            src="/podium.webp"
+            alt="Decorative podium"
+            aria-hidden="true"
           />
-
-          <img class="arrow-fortune-img" src="/wheel-arrow.webp" alt="Arrow" />
-
-          <img class="wheel-center-img" src="/wheel-center.webp" alt="Center" />
-
-          <div class="roulette-wheel"></div>
         </div>
+      </section>
+    </main>
 
-        <button class="spin-button" type="button">Spin</button>
-
-        <picture>
-          <source srcset="/cat-des.webp" media="(min-width: 1280px)" />
-          <source srcset="/cat-tab.webp" media="(min-width: 768px)" />
-          <img class="bg-cat" src="/cat-mob.webp" alt="Cat" />
-        </picture>
-        <picture>
-          <source srcset="/dog-des.webp" media="(min-width: 1280px)" />
-          <source srcset="/dog-tab.webp" media="(min-width: 768px)" />
-          <img class="bg-dog" src="/dog-mob.webp" alt="Dog" />
-        </picture>
-
-        <img class="podium" src="/podium.webp" alt="Podium" />
-      </div>
-    </section>
-
-    <div class="prize-modal-overlay" id="prizeModal">
+    <aside
+      class="prize-modal-overlay"
+      id="prizeModal"
+      role="dialog"
+      aria-labelledby="prizeModalTitle"
+      aria-modal="true"
+    >
       <div class="modal-content">
-        <h2 class="modal-title">Claim your prize!</h2>
+        <h2 class="modal-title" id="prizeModalTitle">Claim your prize!</h2>
 
         <picture>
           <source srcset="/img-prize-big.webp" media="(min-width: 1280px)" />
           <source srcset="/img-prize-tab.webp" media="(min-width: 768px)" />
-          <img class="bg-prize-img" src="/img-prize-mob.webp" alt="Prize" />
+          <img
+            class="bg-prize-img"
+            src="/img-prize-mob.webp"
+            alt="Prize bonus image"
+          />
         </picture>
 
         <a
           href="https://www.google.com"
           rel="noopener noreferrer"
           class="modal-btn"
+          aria-label="Claim your prize"
           >Claim</a
         >
 
-        <a href="#infoModal" class="wheel-info">Wheel Info ⓘ</a>
+        <a
+          href="#infoModal"
+          class="wheel-info"
+          aria-label="Open wheel information"
+        >
+          Wheel Info ⓘ
+        </a>
       </div>
-    </div>
+    </aside>
 
-    <div class="prize-modal-overlay" id="infoModal">
+    <aside
+      class="prize-modal-overlay"
+      id="infoModal"
+      role="dialog"
+      aria-labelledby="infoModalTitle"
+      aria-modal="true"
+    >
       <div class="modal-content-info">
-        <button type="button" class="close-btn">
+        <button type="button" class="close-btn" aria-label="Close modal window">
           <svg
             class="close-btn-svg"
             width="24"
@@ -94,6 +156,8 @@
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
           >
             <path
               d="M17.4697 5.46973C17.7626 5.17684 18.2374 5.17684 18.5303 5.46973C18.8232 5.76262 18.8232 6.23738 18.5303 6.53028L13.0606 12L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L12 13.0606L6.53028 18.5303C6.23738 18.8232 5.76262 18.8232 5.46973 18.5303C5.17684 18.2374 5.17684 17.7626 5.46973 17.4697L10.9395 12L5.46973 6.53028C5.17684 6.23738 5.17684 5.76262 5.46973 5.46973C5.76262 5.17684 6.23738 5.17684 6.53028 5.46973L12 10.9395L17.4697 5.46973Z"
@@ -102,7 +166,7 @@
           </svg>
         </button>
 
-        <h2 class="modal-title info-title">Wheel Info</h2>
+        <h2 class="modal-title info-title" id="infoModalTitle">Wheel Info</h2>
 
         <p class="modal-text">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -136,13 +200,25 @@
           eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est.
         </p>
 
-        <button class="modal-btn">Ok</button>
+        <button class="modal-btn" aria-label="Close information window">
+          Ok
+        </button>
       </div>
-    </div>
+    </aside>
 
-    <div class="prize-modal-overlay" id="errorModal">
+    <aside
+      class="prize-modal-overlay"
+      id="errorModal"
+      role="alertdialog"
+      aria-labelledby="errorModalTitle"
+      aria-modal="true"
+    >
       <div class="modal-content-info">
-        <button type="button" class="close-btn">
+        <button
+          type="button"
+          class="close-btn"
+          aria-label="Close error message"
+        >
           <svg
             class="close-btn-svg"
             width="24"
@@ -150,6 +226,8 @@
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            focusable="false"
           >
             <path
               d="M17.4697 5.46973C17.7626 5.17684 18.2374 5.17684 18.5303 5.46973C18.8232 5.76262 18.8232 6.23738 18.5303 6.53028L13.0606 12L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L12 13.0606L6.53028 18.5303C6.23738 18.8232 5.76262 18.8232 5.46973 18.5303C5.17684 18.2374 5.17684 17.7626 5.46973 17.4697L10.9395 12L5.46973 6.53028C5.17684 6.23738 5.17684 5.76262 5.46973 5.46973C5.76262 5.17684 6.23738 5.17684 6.53028 5.46973L12 10.9395L17.4697 5.46973Z"
@@ -158,9 +236,9 @@
           </svg>
         </button>
 
-        <h2 class="modal-title">Device / IP Error</h2>
-        <div class="lock-wrap">
-          <img class="bg-lock-img" src="/lock.webp" alt="Prize" />
+        <h2 class="modal-title" id="errorModalTitle">Device / IP Error</h2>
+        <div class="lock-wrap" aria-hidden="true">
+          <img class="bg-lock-img" src="/lock.webp" alt="" />
         </div>
         <h3 class="modal-subtitle">
           Oh no! It appears someone has already opened an account on your
@@ -170,9 +248,9 @@
           Unfortunately, you are not eligible to receive the welcome reward, but
           don't worry there are more reward to come!
         </p>
-        <button class="modal-btn">Ok</button>
+        <button class="modal-btn" aria-label="Confirm and close">Ok</button>
       </div>
-    </div>
+    </aside>
 
     <script type="module" src="./main.js"></script>
   </body>
