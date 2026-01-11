@@ -347,7 +347,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 105px auto 0;
+  margin: 58px auto 0;
   transition: all 0.35s ease;
   z-index: 7;
 }
@@ -446,10 +446,12 @@ body {
 }
 @media (min-width: 1280px) {
   .bg-cat {
-    width: 314px;
+    /* width: 314px;
     height: 530px;
-    /* left: 4%; */
-    left: 1%;
+    left: 1%; */
+    width: 328px;
+    height: 524px;
+    left: 2%;
   }
 }
 @media (min-width: 1920px) {
@@ -483,10 +485,13 @@ body {
 }
 @media (min-width: 1280px) {
   .bg-dog {
-    width: 360px;
-    height: 604px;
+    /* width: 360px;
+    height: 604px; */
     /* right: 1%; */
-    right: -1%;
+    /* right: -1%; */
+    width: 383px;
+    height: 572px;
+    right: 0;
   }
 }
 @media (min-width: 1920px) {
