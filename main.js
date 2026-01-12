@@ -34,19 +34,19 @@ function playSound(soundPath, volume = 1, maxDuration = null) {
 }
 
 function playButtonClickSound() {
-  playSound("/audio-button-click.mp3", 1.0, SOUND_DURATIONS.buttonClick);
+  playSound("/audio-button-click.mp3", 0.7, SOUND_DURATIONS.buttonClick);
 }
 
 function playWheelSpinSound() {
-  return playSound("/audio-wheel-spin.mp3", 0.4, SOUND_DURATIONS.wheelSpin);
+  return playSound("/audio-wheel-spin.mp3", 0.3, SOUND_DURATIONS.wheelSpin);
 }
 
 function playTryAgainSound() {
-  playSound("/audio-try-again.mp3", 1.0, SOUND_DURATIONS.tryAgain);
+  playSound("/audio-try-again.mp3", 0.7, SOUND_DURATIONS.tryAgain);
 }
 
 function playPrizeWinSound() {
-  playSound("/audio-prize.mp3", 0.4, SOUND_DURATIONS.prizeWin);
+  playSound("/audio-prize.mp3", 0.3, SOUND_DURATIONS.prizeWin);
 }
 
 function createLightBulbs() {
