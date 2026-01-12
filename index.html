@@ -112,16 +112,6 @@
       <div class="modal-content">
         <h2 class="modal-title" id="prizeModalTitle">Claim your prize!</h2>
 
-        <picture>
-          <source srcset="/img-prize-big.webp" media="(min-width: 1280px)" />
-          <source srcset="/img-prize-tab.webp" media="(min-width: 768px)" />
-          <img
-            class="bg-prize-img"
-            src="/img-prize-mob.webp"
-            alt="Prize bonus image"
-          />
-        </picture>
-
         <a
           href="https://www.google.com"
           rel="noopener noreferrer"
@@ -200,7 +190,10 @@
           eos qui ratione voluptatem sequi nesciunt Neque porro quisquam est.
         </p>
 
-        <button class="modal-btn" aria-label="Close information window">
+        <button
+          class="modal-btn modal-ok"
+          aria-label="Close information window"
+        >
           Ok
         </button>
       </div>
@@ -248,7 +241,9 @@
           Unfortunately, you are not eligible to receive the welcome reward, but
           don't worry there are more reward to come!
         </p>
-        <button class="modal-btn" aria-label="Confirm and close">Ok</button>
+        <button class="modal-btn modal-ok" aria-label="Confirm and close">
+          Ok
+        </button>
       </div>
     </aside>
 
