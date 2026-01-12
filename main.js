@@ -38,7 +38,7 @@ function playButtonClickSound() {
 }
 
 function playWheelSpinSound() {
-  return playSound("/audio-wheel-spin.mp3", 0.7, SOUND_DURATIONS.wheelSpin);
+  return playSound("/audio-wheel-spin.mp3", 0.5, SOUND_DURATIONS.wheelSpin);
 }
 
 function playTryAgainSound() {
@@ -46,7 +46,7 @@ function playTryAgainSound() {
 }
 
 function playPrizeWinSound() {
-  playSound("/audio-prize.mp3", 0.7, SOUND_DURATIONS.prizeWin);
+  playSound("/audio-prize.mp3", 0.5, SOUND_DURATIONS.prizeWin);
 }
 
 function createLightBulbs() {
