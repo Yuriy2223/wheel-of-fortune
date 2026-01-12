@@ -89,10 +89,17 @@ body {
   position: relative;
   min-width: 320px;
   width: 100%;
-  height: 812px;
-  padding: 20px 16px 80px;
+  height: 778px;
+  padding: 20px 10px 40px;
   margin: 0 auto;
   overflow: hidden;
+}
+@media (min-width: 375px) {
+  .container {
+    min-width: 375px;
+    padding: 20px 16px 80px;
+    height: 812px;
+  }
 }
 @media (min-width: 768px) {
   .container {
@@ -120,19 +127,26 @@ body {
 
 .container-coins {
   position: absolute;
-  width: 375px;
-  height: 812px;
+  width: 320px;
+  height: 694px;
   background-image: url(/bg-coins-mob.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: 1;
+  margin: 0 auto;
+}
+@media (min-width: 375px) {
+  .container-coins {
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+  }
 }
 @media (min-width: 768px) {
   .container-coins {
     width: 768px;
     height: 1024px;
-    margin: 0 auto;
     background-image: url(/bg-coins-tab.webp);
   }
 }
@@ -191,7 +205,7 @@ body {
 .title {
   font-family: "Pattaya", sans-serif;
   font-weight: 400;
-  font-size: 50px;
+  font-size: 44px;
   line-height: 0.85;
   text-align: center;
   background: linear-gradient(
@@ -205,6 +219,11 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   padding: 10px 0;
+}
+@media (min-width: 375px) {
+  .title {
+    font-size: 50px;
+  }
 }
 @media (min-width: 768px) {
   .title {
@@ -243,12 +262,18 @@ body {
 .inner-fortune {
   position: relative;
   margin: 0 auto;
-  width: 342px;
-  height: 342px;
+  width: 292px;
+  height: 292px;
   z-index: 2;
   transform: translateZ(0);
   will-change: transform;
   backface-visibility: hidden;
+}
+@media (min-width: 375px) {
+  .inner-fortune {
+    width: 342px;
+    height: 342px;
+  }
 }
 @media (min-width: 768px) {
   .inner-fortune {
@@ -270,13 +295,19 @@ body {
 }
 
 .outer-wheel-img {
-  width: 355px;
-  height: 355px;
+  width: 300px;
+  height: 300px;
   position: absolute;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
   z-index: 3;
+}
+@media (min-width: 375px) {
+  .outer-wheel-img {
+    width: 355px;
+    height: 355px;
+  }
 }
 @media (min-width: 768px) {
   .outer-wheel-img {
@@ -298,13 +329,20 @@ body {
 }
 
 .arrow-fortune-img {
-  width: 51px;
-  height: 67px;
+  width: 46px;
+  height: 60px;
   position: absolute;
-  top: -13px;
+  top: -12px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 4;
+}
+@media (min-width: 375px) {
+  .arrow-fortune-img {
+    height: 67px;
+    top: -13px;
+    left: 50%;
+  }
 }
 @media (min-width: 768px) {
   .arrow-fortune-img {
@@ -329,13 +367,19 @@ body {
 }
 
 .wheel-center-img {
-  width: 85px;
-  height: 85px;
+  width: 74px;
+  height: 74px;
   position: absolute;
   top: 48.5%;
   right: 50%;
   transform: translate(50%, -50%);
   z-index: 4;
+}
+@media (min-width: 375px) {
+  .wheel-center-img {
+    width: 85px;
+    height: 85px;
+  }
 }
 @media (min-width: 768px) {
   .wheel-center-img {
@@ -518,14 +562,22 @@ body {
 }
 
 .podium {
-  width: 410px;
-  height: 401px;
+  width: 373px;
+  height: 429px;
   position: absolute;
   right: 50%;
   bottom: -11%;
+  right: 50%;
   transform: translate(50%, -50%);
   pointer-events: none;
   z-index: 1;
+}
+@media (min-width: 375px) {
+  .podium {
+    width: 410px;
+    height: 401px;
+    bottom: -11%;
+  }
 }
 @media (min-width: 768px) {
   .podium {
@@ -551,14 +603,22 @@ body {
 
 .roulette-wheel {
   position: absolute;
-  width: 292px;
-  height: 292px;
-  top: 19px;
-  left: 24px;
+  width: 244px;
+  height: 244px;
+  top: 20px;
+  left: 23px;
   pointer-events: none;
   z-index: 3;
   user-select: none;
   -webkit-user-drag: none;
+}
+@media (min-width: 375px) {
+  .roulette-wheel {
+    width: 292px;
+    height: 292px;
+    top: 19px;
+    left: 24px;
+  }
 }
 @media (min-width: 768px) {
   .roulette-wheel {
@@ -611,7 +671,7 @@ body {
   transform-origin: center center;
   will-change: opacity, transform;
   backface-visibility: hidden;
-  opacity: 0.3;
+  opacity: 0.1;
 }
 @media (min-width: 768px) {
   .light-bulb {
@@ -735,9 +795,9 @@ body {
   flex-direction: column;
   align-items: center;
   border-radius: 16px;
-  padding: 48px 16px;
-  width: 343px;
-  height: 608px;
+  padding: 36px 10px;
+  width: 300px;
+  height: 532px;
   background: #0d0a0f;
   background-image: url(/img-prize-mob.webp), url(/bg-prize-mob.webp);
   background-size: cover;
@@ -747,6 +807,13 @@ body {
   opacity: 0;
   transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
     opacity 0.35s ease;
+}
+@media (min-width: 375px) {
+  .modal-content {
+    padding: 48px 16px;
+    width: 343px;
+    height: 608px;
+  }
 }
 @media (min-width: 768px) {
   .modal-content {
@@ -828,11 +895,18 @@ body {
   white-space: nowrap;
   transition: all 0.35s ease;
   border-radius: 100px;
-  width: 311px;
+  width: 270px;
   height: 56px;
   font-weight: 800;
   font-size: 32px;
-  margin: auto auto 16px;
+  margin: auto auto 12px;
+}
+@media (min-width: 375px) {
+  .modal-btn {
+    width: 311px;
+    height: 56px;
+    margin-bottom: 16px;
+  }
 }
 @media (min-width: 768px) {
   .modal-btn {
@@ -901,8 +975,8 @@ body {
 .modal-content-info {
   position: relative;
   border-radius: 16px;
-  padding: 24px 16px;
-  width: 343px;
+  padding: 48px 10px;
+  width: 300px;
   background: #0d0a0f;
   transform: scale(0.7) translateY(-20px);
   opacity: 0;
@@ -912,6 +986,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+@media (min-width: 375px) {
+  .modal-content-info {
+    padding: 48px 16px;
+    width: 343px;
+  }
 }
 @media (min-width: 768px) {
   .modal-content-info {
