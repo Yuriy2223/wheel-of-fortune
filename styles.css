@@ -93,7 +93,7 @@ body {
   height: 812px;
   padding: 20px 16px 80px;
   margin: 0 auto;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 @media (min-width: 768px) {
   .container {
