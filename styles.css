@@ -235,7 +235,6 @@ body {
   width: 342px;
   height: 342px;
   z-index: 2;
-
   transform: translateZ(0);
   will-change: transform;
   backface-visibility: hidden;
@@ -580,30 +579,13 @@ body {
   width: 100%;
   height: 100%;
   top: -1%;
+  top: -1.5%;
   left: 0;
   z-index: 3;
   pointer-events: none;
   transform: translateZ(0);
   will-change: transform;
   backface-visibility: hidden;
-}
-@media (min-width: 768px) {
-  .wheel-lights {
-    top: -1%;
-    left: 0;
-  }
-}
-@media (min-width: 1280px) {
-  .wheel-lights {
-    top: -1%;
-    left: 0;
-  }
-}
-@media (min-width: 1920px) {
-  .wheel-lights {
-    top: -1.5%;
-    left: 0;
-  }
 }
 
 .light-bulb {
@@ -622,8 +604,8 @@ body {
 }
 @media (min-width: 768px) {
   .light-bulb {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
   }
 }
 @media (min-width: 1920px) {
@@ -726,7 +708,7 @@ body {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
 }
 
 .prize-modal-overlay.active {
@@ -737,35 +719,29 @@ body {
 
 .modal-content {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   border-radius: 16px;
-  padding: 24px 16px;
+  padding: 48px 16px;
   width: 343px;
+  height: 608px;
   background: #0d0a0f;
-  background-image: url(/bg-modal-prize-mob.webp);
+  background-image: url(/img-prize-mob.webp), url(/bg-prize-mob.webp);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transform: scale(0.7) translateY(-20px);
   opacity: 0;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
-    opacity 0.3s ease;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1),
+    opacity 0.35s ease;
 }
 @media (min-width: 768px) {
   .modal-content {
-    background-image: url(/bg-modal-prize-tab.webp);
+    background-image: url(/img-prize-tab.webp), url(/bg-prize-tab.webp);
     padding: 48px 48px 36px;
     width: 600px;
-  }
-}
-@media (min-width: 1280px) {
-  .modal-content {
-    background-image: url(/bg-modal-prize-big.webp);
-  }
-}
-@media (min-width: 1920px) {
-  .modal-content {
-    padding: 48px 48px 36px;
-    width: 600px;
+    height: 682px;
   }
 }
 
@@ -825,19 +801,6 @@ body {
   }
 }
 
-.bg-prize-img {
-  width: 311px;
-  height: 357px;
-  margin: 0 auto;
-  object-fit: cover;
-}
-@media (min-width: 768px) {
-  .bg-prize-img {
-    width: 504px;
-    height: 400px;
-  }
-}
-
 .modal-btn {
   font-family: "Inter", sans-serif;
   color: #fff;
@@ -852,19 +815,18 @@ body {
   background: linear-gradient(135deg, #990aff 0%, #490eb7 100%);
   white-space: nowrap;
   transition: all 0.35s ease;
-
   border-radius: 100px;
   width: 311px;
   height: 56px;
   font-weight: 800;
   font-size: 32px;
-  margin-bottom: 16px;
+  margin: auto auto 16px;
 }
 @media (min-width: 768px) {
   .modal-btn {
-    width: 500px;
+    width: 460px;
     height: 72px;
-    margin-bottom: 20px;
+    margin-bottom: 26px;
   }
 }
 
@@ -889,7 +851,7 @@ body {
   text-align: center;
   font-weight: 800;
   font-size: 15px;
-  line-height: 120%;
+  line-height: 1.2;
   color: #fff;
   transition: all 0.35s ease;
 }
@@ -934,11 +896,16 @@ body {
   opacity: 0;
   transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
     opacity 0.3s ease;
+  background-image: url(/bg-info-mob.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 @media (min-width: 768px) {
   .modal-content-info {
     padding: 48px;
     width: 600px;
+    background-image: url(/bg-info-tab.webp);
   }
 }
 
@@ -978,4 +945,7 @@ body {
     font-size: 24px;
     margin-bottom: 16px;
   }
+}
+.modal-ok {
+  margin-bottom: 0;
 }

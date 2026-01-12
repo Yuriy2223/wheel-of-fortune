@@ -34,22 +34,18 @@ function playSound(soundPath, volume = 1, maxDuration = null) {
 }
 
 function playButtonClickSound() {
-  // playSound("/audio-button-click.mp3", 1.0, SOUND_DURATIONS.buttonClick);
-  playSound("/audio-prize.mp3", 1.0, SOUND_DURATIONS.buttonClick);
+  playSound("/audio-button-click.mp3", 1.0, SOUND_DURATIONS.buttonClick);
 }
 
 function playWheelSpinSound() {
-  // return playSound("/audio-wheel-spin.mp3", 1.0, SOUND_DURATIONS.wheelSpin);
-  return playSound("/audio-prize.mp3", 1.0, SOUND_DURATIONS.wheelSpin);
+  return playSound("/audio-wheel-spin.mp3", 1.0, SOUND_DURATIONS.wheelSpin);
 }
 
 function playTryAgainSound() {
-  // playSound("/audio-try-again.mp3", 1.0, SOUND_DURATIONS.tryAgain);
-  playSound("/audio-prize.mp3", 1.0, SOUND_DURATIONS.tryAgain);
+  playSound("/audio-try-again.mp3", 1.0, SOUND_DURATIONS.tryAgain);
 }
 
 function playPrizeWinSound() {
-  // playSound("/audio-prize.mp3", 1.0, SOUND_DURATIONS.prizeWin);
   playSound("/audio-prize.mp3", 1.0, SOUND_DURATIONS.prizeWin);
 }
 
@@ -68,9 +64,9 @@ function createLightBulbs() {
   if (screenWidth < 768) {
     radiusPercent = 45.6;
   } else if (screenWidth < 1280) {
-    radiusPercent = 44.8;
+    radiusPercent = 44.4;
   } else if (screenWidth < 1920) {
-    radiusPercent = 43.7;
+    radiusPercent = 43.8;
   } else {
     radiusPercent = 43.7;
   }
