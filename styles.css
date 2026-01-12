@@ -93,6 +93,7 @@ body {
   height: 812px;
   padding: 20px 16px 80px;
   margin: 0 auto;
+  overflow: hidden;
   /* border: 1px solid red; */
 }
 @media (min-width: 768px) {
@@ -121,9 +122,7 @@ body {
 
 .container-coins {
   position: absolute;
-  /* width: 375px; */
-  max-width: 375px;
-  width: 100%;
+  width: 375px;
   height: 812px;
   background-image: url(/bg-coins-mob.webp);
   background-size: cover;
@@ -133,8 +132,7 @@ body {
 }
 @media (min-width: 768px) {
   .container-coins {
-    /* width: 768px; */
-    max-width: 768px;
+    width: 768px;
     height: 1024px;
     margin: 0 auto;
     background-image: url(/bg-coins-tab.webp);
@@ -142,16 +140,14 @@ body {
 }
 @media (min-width: 1280px) {
   .container-coins {
-    /* width: 1280px; */
-    max-width: 1280px;
+    width: 1280px;
     height: 800px;
     background-image: url(/bg-coins-lap.webp);
   }
 }
 @media (min-width: 1920px) {
   .container-coins {
-    /* width: 1920px; */
-    max-width: 1920px;
+    width: 1920px;
     height: 1080px;
     background-image: url(/bg-coins-des.webp);
   }
