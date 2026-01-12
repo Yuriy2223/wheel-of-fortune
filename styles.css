@@ -7,7 +7,6 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
-  /* outline: 1px solid red; */
 }
 
 h1,
@@ -94,7 +93,6 @@ body {
   padding: 20px 16px 80px;
   margin: 0 auto;
   overflow: hidden;
-  /* border: 1px solid red; */
 }
 @media (min-width: 768px) {
   .container {
@@ -600,37 +598,6 @@ body {
   will-change: transform;
   backface-visibility: hidden;
 }
-
-/* .light-bulb {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #fff, #ffdf00);
-  box-shadow: 0 0 10px 3px rgba(255, 223, 0, 0.8),
-    0 0 20px 5px rgba(255, 223, 0, 0.4);
-  animation: bulbBlink 2s ease-in-out infinite;
-  transform: translate(-50%, -50%);
-  transform-origin: center center;
-  will-change: opacity, transform;
-  backface-visibility: hidden;
-}
-@media (min-width: 768px) {
-  .light-bulb {
-    width: 18px;
-    height: 18px;
-  }
-}
-@media (min-width: 1920px) {
-  .light-bulb {
-    width: 22px;
-    height: 22px;
-  }
-}
-
-.wheel-lights.spinning .light-bulb {
-  animation: bulbBlink 0.5s ease-in-out infinite;
-} */
 
 .light-bulb {
   position: absolute;
