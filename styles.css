@@ -37,6 +37,10 @@ img {
   display: block;
   width: 100%;
   height: 100%;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  pointer-events: none;
 }
 
 body {
@@ -46,6 +50,10 @@ body {
   font-weight: 400;
   line-height: 1.4;
   margin: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .fortune-section {
@@ -454,7 +462,6 @@ body {
   bottom: 0;
   left: 0;
   z-index: 6;
-  pointer-events: none;
 }
 @media (min-width: 768px) {
   .bg-cat {
@@ -484,7 +491,6 @@ body {
   bottom: 0;
   right: 0;
   z-index: 6;
-  pointer-events: none;
 }
 @media (min-width: 768px) {
   .bg-dog {
@@ -548,6 +554,8 @@ body {
   left: 24px;
   pointer-events: none;
   z-index: 3;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 @media (min-width: 768px) {
   .roulette-wheel {
@@ -588,7 +596,7 @@ body {
   backface-visibility: hidden;
 }
 
-.light-bulb {
+/* .light-bulb {
   position: absolute;
   width: 12px;
   height: 12px;
@@ -617,6 +625,38 @@ body {
 
 .wheel-lights.spinning .light-bulb {
   animation: bulbBlink 0.5s ease-in-out infinite;
+} */
+
+.light-bulb {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff, #ffdf00);
+  box-shadow: 0 0 10px 3px rgba(255, 223, 0, 0.8),
+    0 0 20px 5px rgba(255, 223, 0, 0.4);
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  will-change: opacity, transform;
+  backface-visibility: hidden;
+  opacity: 0.3;
+}
+@media (min-width: 768px) {
+  .light-bulb {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (min-width: 1920px) {
+  .light-bulb {
+    width: 22px;
+    height: 22px;
+  }
+}
+
+.wheel-lights.spinning .light-bulb {
+  animation: bulbBlink 1.5s ease-in-out infinite;
+  opacity: 1;
 }
 
 @keyframes bulbBlink {
