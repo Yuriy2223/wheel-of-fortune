@@ -136,6 +136,13 @@ body {
   z-index: 1;
   margin: 0 auto;
 }
+@media (max-width: 374px) {
+  .container-coins {
+    min-width: 300px;
+    width: 100%;
+    height: 760px;
+  }
+}
 @media (min-width: 375px) {
   .container-coins {
     width: 375px;
