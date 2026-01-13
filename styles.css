@@ -94,6 +94,11 @@ body {
   margin: 0 auto;
   overflow: hidden;
 }
+@media (min-width: 320px) and (max-width: 350px) {
+  .container {
+    height: 668px;
+  }
+}
 @media (min-width: 375px) {
   .container {
     min-width: 375px;
@@ -136,7 +141,15 @@ body {
   z-index: 1;
   margin: 0 auto;
 }
-@media (max-width: 374px) {
+@media (min-width: 320px) and (max-width: 350px) {
+  .container-coins {
+    margin-top: 57px;
+    max-width: 350px;
+    width: 100%;
+    height: 600px;
+  }
+}
+@media (min-width: 351px) and (max-width: 374px) {
   .container-coins {
     min-width: 300px;
     width: 100%;
@@ -434,6 +447,27 @@ body {
   transition: all 0.35s ease;
   z-index: 7;
 }
+@media (min-width: 320px) and (max-width: 350px) {
+  .spin-button {
+    width: 244px;
+    height: 80px;
+    margin: 36px auto 0;
+  }
+}
+@media (min-width: 351px) and (max-width: 374px) {
+  .spin-button {
+    width: 244px;
+    height: 80px;
+    margin: 80px auto 0;
+  }
+}
+@media (min-width: 375px) {
+  .spin-button {
+    width: 270px;
+    height: 80px;
+    margin: 104px auto 0;
+  }
+}
 @media (min-width: 768px) {
   .spin-button {
     width: 350px;
@@ -517,6 +551,12 @@ body {
   left: 0;
   z-index: 6;
 }
+@media (min-width: 320px) and (max-width: 350px) {
+  .bg-cat {
+    width: 135px;
+    height: 292px;
+  }
+}
 @media (min-width: 768px) {
   .bg-cat {
     width: 268px;
@@ -545,6 +585,12 @@ body {
   bottom: 0;
   right: 0;
   z-index: 6;
+}
+@media (min-width: 320px) and (max-width: 350px) {
+  .bg-dog {
+    width: 132px;
+    height: 320px;
+  }
 }
 @media (min-width: 768px) {
   .bg-dog {
@@ -578,6 +624,13 @@ body {
   transform: translate(50%, -50%);
   pointer-events: none;
   z-index: 1;
+}
+@media (min-width: 320px) and (max-width: 350px) {
+  .podium {
+    width: 373px;
+    height: 429px;
+    bottom: -28%;
+  }
 }
 @media (min-width: 375px) {
   .podium {
