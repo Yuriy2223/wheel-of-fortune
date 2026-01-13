@@ -451,21 +451,21 @@ body {
   .spin-button {
     width: 244px;
     height: 80px;
-    margin: 36px auto 0;
+    margin: 14px auto 0;
   }
 }
 @media (min-width: 351px) and (max-width: 374px) {
   .spin-button {
     width: 244px;
     height: 80px;
-    margin: 80px auto 0;
+    margin: 60px auto 0;
   }
 }
 @media (min-width: 375px) {
   .spin-button {
     width: 270px;
     height: 80px;
-    margin: 104px auto 0;
+    margin: 84px auto 0;
   }
 }
 @media (min-width: 768px) {
