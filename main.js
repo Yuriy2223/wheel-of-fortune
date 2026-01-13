@@ -105,10 +105,10 @@ function rotationForIndex(index) {
 
 async function loadGameState() {
   try {
-    // const savedSpins = localStorage.getItem("wheel_spins_used");
-    // spinsUsed = savedSpins ? parseInt(savedSpins) : 0;
-    // const savedPrize = localStorage.getItem("prize_opened");
-    // prizeOpened = savedPrize === "true";
+    const savedSpins = localStorage.getItem("wheel_spins_used");
+    spinsUsed = savedSpins ? parseInt(savedSpins) : 0;
+    const savedPrize = localStorage.getItem("prize_opened");
+    prizeOpened = savedPrize === "true";
   } catch (error) {
     console.error("Помилка завантаження:", error);
     spinsUsed = 0;
@@ -118,8 +118,8 @@ async function loadGameState() {
 
 async function saveGameState() {
   try {
-    // localStorage.setItem("wheel_spins_used", spinsUsed.toString());
-    // localStorage.setItem("prize_opened", prizeOpened.toString());
+    localStorage.setItem("wheel_spins_used", spinsUsed.toString());
+    localStorage.setItem("prize_opened", prizeOpened.toString());
   } catch (error) {
     console.error("Помилка збереження:", error);
     throw error;
