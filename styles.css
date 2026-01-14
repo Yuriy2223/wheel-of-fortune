@@ -118,8 +118,8 @@ body {
   .container {
     min-width: 1280px;
     max-width: 1280px;
-    height: 800px;
-    padding: 40px 40px 20px;
+    height: 768px;
+    padding: 30px 40px 20px;
   }
 }
 @media (min-width: 1920px) {
@@ -174,7 +174,7 @@ body {
 @media (min-width: 1280px) {
   .container-coins {
     width: 1280px;
-    height: 800px;
+    height: 768px;
     background-image: url(/bg-coins-lap.webp);
   }
 }
@@ -194,6 +194,11 @@ body {
   padding-bottom: 46px;
 }
 @media (min-width: 1280px) {
+  .inner-text {
+    padding-bottom: 20px;
+  }
+}
+@media (min-width: 1920px) {
   .inner-text {
     padding-bottom: 30px;
   }
@@ -218,8 +223,13 @@ body {
     height: 60px;
     margin-bottom: 0;
     position: absolute;
-    top: 65px;
+    top: 54px;
     left: 20px;
+  }
+}
+@media (min-width: 1920px) {
+  .logo-img {
+    top: 65px;
   }
 }
 
@@ -304,8 +314,8 @@ body {
 }
 @media (min-width: 1280px) {
   .inner-fortune {
-    width: 530px;
-    height: 530px;
+    width: 500px;
+    height: 500px;
   }
 }
 @media (min-width: 1920px) {
@@ -338,8 +348,8 @@ body {
 }
 @media (min-width: 1280px) {
   .outer-wheel-img {
-    width: 530px;
-    height: 530px;
+    width: 500px;
+    height: 500px;
   }
 }
 @media (min-width: 1920px) {
@@ -374,9 +384,9 @@ body {
 }
 @media (min-width: 1280px) {
   .arrow-fortune-img {
-    top: -15px;
-    width: 76px;
-    height: 100px;
+    top: -13px;
+    width: 70px;
+    height: 96px;
   }
 }
 @media (min-width: 1920px) {
@@ -410,8 +420,8 @@ body {
 }
 @media (min-width: 1280px) {
   .wheel-center-img {
-    width: 127px;
-    height: 127px;
+    width: 120px;
+    height: 120px;
   }
 }
 @media (min-width: 1920px) {
@@ -480,7 +490,7 @@ body {
   .spin-button {
     width: 350px;
     height: 80px;
-    margin: -9px auto 0;
+    margin: 6px auto 0;
   }
 }
 @media (min-width: 1920px) {
@@ -649,7 +659,7 @@ body {
 }
 @media (min-width: 1280px) {
   .podium {
-    width: 620px;
+    width: 594px;
     height: 536px;
     bottom: -44%;
   }
@@ -691,8 +701,8 @@ body {
 }
 @media (min-width: 1280px) {
   .roulette-wheel {
-    width: 432px;
-    height: 432px;
+    width: 403px;
+    height: 403px;
     top: 41px;
     left: 48px;
   }
