@@ -19,6 +19,17 @@
     <title>Wheel of Fortune</title>
   </head>
   <body>
+    <div id="page-loader">
+      <div class="loader-text-wrapper">
+        Loading
+        <span class="loader-dots">
+          <span class="loader-dot">.</span>
+          <span class="loader-dot">.</span>
+          <span class="loader-dot">.</span>
+        </span>
+      </div>
+    </div>
+
     <main>
       <section class="fortune-section">
         <div class="container-coins" aria-hidden="true"></div>
@@ -113,7 +124,7 @@
         <h2 class="modal-title" id="prizeModalTitle">Claim your prize!</h2>
 
         <a
-          href="https://www.google.com"
+          href="https://www.twocards.com/en?modal=signUp"
           rel="noopener noreferrer"
           class="modal-btn"
           aria-label="Claim your prize"
@@ -204,44 +215,23 @@
       id="errorModal"
       role="alertdialog"
       aria-labelledby="errorModalTitle"
+      aria-describedby="errorDescription"
       aria-modal="true"
     >
       <div class="modal-content-info">
-        <button
-          type="button"
-          class="close-btn"
-          aria-label="Close error message"
-        >
-          <svg
-            class="close-btn-svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            focusable="false"
-          >
-            <path
-              d="M17.4697 5.46973C17.7626 5.17684 18.2374 5.17684 18.5303 5.46973C18.8232 5.76262 18.8232 6.23738 18.5303 6.53028L13.0606 12L18.5303 17.4697C18.8232 17.7626 18.8232 18.2374 18.5303 18.5303C18.2374 18.8232 17.7626 18.8232 17.4697 18.5303L12 13.0606L6.53028 18.5303C6.23738 18.8232 5.76262 18.8232 5.46973 18.5303C5.17684 18.2374 5.17684 17.7626 5.46973 17.4697L10.9395 12L5.46973 6.53028C5.17684 6.23738 5.17684 5.76262 5.46973 5.46973C5.76262 5.17684 6.23738 5.17684 6.53028 5.46973L12 10.9395L17.4697 5.46973Z"
-              fill="white"
-            />
-          </svg>
-        </button>
-
-        <h2 class="modal-title" id="errorModalTitle">Device / IP Error</h2>
+        <h2 class="modal-title" id="errorModalTitle">
+          Sorry, an error occurred.
+        </h2>
         <div class="lock-wrap" aria-hidden="true">
           <img class="bg-lock-img" src="/lock.webp" alt="" />
         </div>
-        <h3 class="modal-subtitle">
-          Oh no! It appears someone has already opened an account on your
-          device/IP
+        <h3 class="modal-subtitle modal-subtitle-err" id="errorDescription">
+          We couldn't complete your request
         </h3>
-        <p class="modal-text">
-          Unfortunately, you are not eligible to receive the welcome reward, but
-          don't worry there are more reward to come!
+        <p class="modal-text modal-text-err">
+          Please try again later or contact support if the problem persists.
         </p>
-        <button class="modal-btn modal-ok" aria-label="Confirm and close">
+        <button class="modal-btn modal-err-ok" aria-label="Confirm and close">
           Ok
         </button>
       </div>

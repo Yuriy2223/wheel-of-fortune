@@ -13,40 +13,68 @@ const SOUND_DURATIONS = {
   prizeWin: null,
 };
 
-function playSound(soundPath, volume = 1, maxDuration = null) {
-  try {
-    const audio = new Audio(soundPath);
-    audio.volume = volume;
-    audio.play().catch((err) => console.log("Звук не відтворився:", err));
+const audioCache = {
+  buttonClick: null,
+  wheelSpin: null,
+  tryAgain: null,
+  prizeWin: null,
+};
 
-    if (maxDuration !== null && maxDuration > 0) {
-      setTimeout(() => {
-        audio.pause();
-        audio.currentTime = 0;
-      }, maxDuration);
-    }
+function preloadAudio() {
+  audioCache.buttonClick = new Audio("/audio-button-click.mp3");
+  audioCache.wheelSpin = new Audio("/audio-wheel-spin.mp3");
+  audioCache.tryAgain = new Audio("/audio-try-again.mp3");
+  audioCache.prizeWin = new Audio("/audio-prize.mp3");
 
-    return audio;
-  } catch (error) {
-    console.error("Помилка відтворення звуку:", error);
-    return null;
-  }
+  audioCache.buttonClick.volume = 0.7;
+  audioCache.wheelSpin.volume = 0.4;
+  audioCache.tryAgain.volume = 0.7;
+  audioCache.prizeWin.volume = 0.4;
+
+  Object.values(audioCache).forEach((audio) => {
+    if (audio) audio.load();
+  });
 }
 
 function playButtonClickSound() {
-  playSound("/audio-button-click.mp3", 0.7, SOUND_DURATIONS.buttonClick);
+  if (!audioCache.buttonClick) return;
+  audioCache.buttonClick.currentTime = 0;
+  audioCache.buttonClick
+    .play()
+    .catch((err) => console.warn("Audio error:", err));
+
+  setTimeout(() => {
+    audioCache.buttonClick.pause();
+    audioCache.buttonClick.currentTime = 0;
+  }, SOUND_DURATIONS.buttonClick);
 }
 
 function playWheelSpinSound() {
-  return playSound("/audio-wheel-spin.mp3", 0.4, SOUND_DURATIONS.wheelSpin);
+  if (!audioCache.wheelSpin) return;
+  audioCache.wheelSpin.currentTime = 0;
+  audioCache.wheelSpin.play().catch((err) => console.warn("Audio error:", err));
+
+  setTimeout(() => {
+    audioCache.wheelSpin.pause();
+    audioCache.wheelSpin.currentTime = 0;
+  }, SOUND_DURATIONS.wheelSpin);
 }
 
 function playTryAgainSound() {
-  playSound("/audio-try-again.mp3", 0.7, SOUND_DURATIONS.tryAgain);
+  if (!audioCache.tryAgain) return;
+  audioCache.tryAgain.currentTime = 0;
+  audioCache.tryAgain.play().catch((err) => console.warn("Audio error:", err));
+
+  setTimeout(() => {
+    audioCache.tryAgain.pause();
+    audioCache.tryAgain.currentTime = 0;
+  }, SOUND_DURATIONS.tryAgain);
 }
 
 function playPrizeWinSound() {
-  playSound("/audio-prize.mp3", 0.4, SOUND_DURATIONS.prizeWin);
+  if (!audioCache.prizeWin) return;
+  audioCache.prizeWin.currentTime = 0;
+  audioCache.prizeWin.play().catch((err) => console.warn("Audio error:", err));
 }
 
 function createLightBulbs() {
@@ -110,7 +138,6 @@ async function loadGameState() {
     const savedPrize = localStorage.getItem("prize_opened");
     prizeOpened = savedPrize === "true";
   } catch (error) {
-    console.error("Помилка завантаження:", error);
     spinsUsed = 0;
     prizeOpened = false;
   }
@@ -121,7 +148,6 @@ async function saveGameState() {
     localStorage.setItem("wheel_spins_used", spinsUsed.toString());
     localStorage.setItem("prize_opened", prizeOpened.toString());
   } catch (error) {
-    console.error("Помилка збереження:", error);
     throw error;
   }
 }
@@ -215,7 +241,6 @@ async function spinWheel() {
     try {
       await saveGameState();
     } catch (error) {
-      console.error("Помилка при збереженні:", error);
       showErrorModal();
       spinsUsed--;
       updateButtonState();
@@ -241,7 +266,7 @@ function showPrizeModal() {
 
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
-  modal.style.zIndex = "100";
+  modal.style.zIndex = "11";
 }
 
 function showInfoModal() {
@@ -249,7 +274,8 @@ function showInfoModal() {
   if (!modal) return;
 
   modal.classList.add("active");
-  modal.style.zIndex = "110";
+  document.body.style.overflow = "hidden";
+  modal.style.zIndex = "12";
 }
 
 function closeInfoModal() {
@@ -257,36 +283,39 @@ function closeInfoModal() {
   if (!modal) return;
 
   modal.classList.remove("active");
+
+  if (!document.getElementById("prizeModal")?.classList.contains("active")) {
+    document.body.style.overflow = "";
+  }
 }
 
 function showErrorModal() {
   const modal = document.getElementById("errorModal");
   if (!modal) return;
 
-  modal.classList.add("active");
-  if (!document.getElementById("prizeModal")?.classList.contains("active")) {
-    document.body.style.overflow = "hidden";
-  }
-  modal.style.zIndex = "110";
+  modal.classList.add("active", "error-page-mode");
+  document.body.style.overflow = "hidden";
+  modal.style.zIndex = "13";
 }
 
 function closeErrorModal() {
-  const modal = document.getElementById("errorModal");
-  if (!modal) return;
+  const errorModal = document.getElementById("errorModal");
+  const prizeModal = document.getElementById("prizeModal");
 
-  modal.classList.remove("active");
-  if (!document.getElementById("prizeModal")?.classList.contains("active")) {
+  if (!errorModal) return;
+
+  errorModal.classList.remove("active", "error-page-mode");
+
+  if (!prizeModal?.classList.contains("active")) {
     document.body.style.overflow = "";
   }
 }
 
 window.addEventListener("offline", () => {
-  console.log("Інтернет втрачено");
   showErrorModal();
 });
 
 window.addEventListener("online", () => {
-  console.log("Інтернет відновлено");
   closeErrorModal();
 });
 
@@ -299,17 +328,10 @@ window.addEventListener("resize", () => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadGameState();
+  preloadAudio();
 
   createLightBulbs();
   const wheel = createWheel();
-
-  currentRotation = rotationForIndex(0);
-  wheel.style.transform = `rotate(${currentRotation}deg)`;
-
-  if (prizeOpened) {
-    showPrizeModal();
-  }
 
   document.querySelector(".spin-button")?.addEventListener("click", spinWheel);
 
@@ -317,16 +339,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     btn.addEventListener("click", closeInfoModal);
   });
 
-  document.querySelectorAll("#errorModal .close-btn").forEach((btn) => {
-    btn.addEventListener("click", closeErrorModal);
-  });
-
   document
     .querySelector("#infoModal .modal-btn")
     ?.addEventListener("click", closeInfoModal);
 
   document
-    .querySelector("#errorModal .modal-btn")
+    .querySelector("#errorModal .modal-err-ok")
     ?.addEventListener("click", closeErrorModal);
 
   document.querySelector(".wheel-info")?.addEventListener("click", (e) => {
@@ -340,11 +358,33 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
   });
 
-  document.getElementById("errorModal")?.addEventListener("click", (e) => {
-    if (e.target.id === "errorModal") {
-      closeErrorModal();
+  const validPaths = ["/", "/index.html"];
+  const currentPath = window.location.pathname;
+
+  if (!validPaths.includes(currentPath)) {
+    await loadGameState();
+    if (prizeOpened) {
+      showPrizeModal();
     }
-  });
+    showErrorModal();
+    return;
+  }
+
+  await loadGameState();
+
+  currentRotation = rotationForIndex(0);
+  wheel.style.transform = `rotate(${currentRotation}deg)`;
+
+  if (prizeOpened) {
+    showPrizeModal();
+  }
 
   updateButtonState();
+});
+
+window.addEventListener("load", function () {
+  const loader = document.getElementById("page-loader");
+  setTimeout(() => {
+    loader.classList.add("hidden");
+  }, 500);
 });
