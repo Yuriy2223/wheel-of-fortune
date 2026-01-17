@@ -90,7 +90,7 @@ function createLightBulbs() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth < 768) {
-    radiusPercent = 45.6;
+    radiusPercent = 45.4;
   } else if (screenWidth < 1280) {
     radiusPercent = 44.4;
   } else if (screenWidth < 1920) {
@@ -386,5 +386,5 @@ window.addEventListener("load", function () {
   const loader = document.getElementById("page-loader");
   setTimeout(() => {
     loader.classList.add("hidden");
-  }, 500);
+  }, 700);
 });
