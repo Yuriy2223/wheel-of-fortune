@@ -304,10 +304,18 @@ function closeErrorModal() {
 
   if (!errorModal) return;
 
+  const validPaths = ["/", "/index.html"];
+  const currentPath = window.location.pathname;
+  const is404Error = !validPaths.includes(currentPath);
+
   errorModal.classList.remove("active", "error-page-mode");
 
   if (!prizeModal?.classList.contains("active")) {
     document.body.style.overflow = "";
+  }
+
+  if (is404Error) {
+    window.location.href = "/";
   }
 }
 
