@@ -38,20 +38,19 @@ function getCookie(name) {
   return null;
 }
 
-function getOrCreateStag() {
-  let stag = getCookie("player_stag");
+function getStagFromUrl() {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("stag");
+}
 
-  if (!stag) {
-    stag =
-      "fortune_wheel_" +
-      Date.now() +
-      "_" +
-      Math.random().toString(36).substr(2, 9);
-
+function saveStagToCookie(stag) {
+  if (stag) {
     setCookie("player_stag", stag, 365);
   }
+}
 
-  return stag;
+function getStagFromCookie() {
+  return getCookie("player_stag") || "";
 }
 
 function preloadAudio() {
@@ -298,7 +297,7 @@ function showPrizeModal() {
   const modal = document.getElementById("prizeModal");
   if (!modal) return;
 
-  const playerStag = getOrCreateStag();
+  const playerStag = getStagFromCookie();
 
   const claimLink = document.getElementById("claimPrizeLink");
   if (claimLink) {
@@ -377,6 +376,11 @@ window.addEventListener("resize", () => {
 });
 
 document.addEventListener("DOMContentLoaded", async () => {
+  const stagFromUrl = getStagFromUrl();
+  if (stagFromUrl) {
+    saveStagToCookie(stagFromUrl);
+  }
+
   preloadAudio();
 
   createLightBulbs();
