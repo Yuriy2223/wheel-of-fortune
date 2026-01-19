@@ -24,7 +24,8 @@ function setCookie(name, value, days) {
   const date = new Date();
   date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
   const expires = "expires=" + date.toUTCString();
-  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+  document.cookie =
+    name + "=" + value + ";" + expires + ";path=/;SameSite=Strict;Secure";
 }
 
 function getCookie(name) {
@@ -45,12 +46,30 @@ function getStagFromUrl() {
 
 function saveStagToCookie(stag) {
   if (stag) {
-    setCookie("player_stag", stag, 365);
+    if (/^[a-zA-Z0-9_-]+$/.test(stag)) {
+      setCookie("player_stag", stag, 365);
+
+      const hash = btoa(stag + "wheel_secret_key");
+      setCookie("stag_hash", hash, 365);
+    }
   }
 }
 
 function getStagFromCookie() {
-  return getCookie("player_stag") || "";
+  const stag = getCookie("player_stag") || "";
+  const hash = getCookie("stag_hash") || "";
+
+  if (stag && hash) {
+    const expectedHash = btoa(stag + "wheel_secret_key");
+    if (hash !== expectedHash) {
+      console.warn("Security: stag integrity check failed");
+      document.cookie = "player_stag=; path=/; max-age=0";
+      document.cookie = "stag_hash=; path=/; max-age=0";
+      return "";
+    }
+  }
+
+  return stag;
 }
 
 function preloadAudio() {
@@ -167,7 +186,20 @@ function rotationForIndex(index) {
 async function loadGameState() {
   try {
     const savedSpins = localStorage.getItem("wheel_spins_used");
+    const savedHash = localStorage.getItem("wheel_state_hash");
+
     spinsUsed = savedSpins ? parseInt(savedSpins) : 0;
+
+    if (savedSpins && savedHash) {
+      const expectedHash = btoa(savedSpins + "game_secret");
+      if (savedHash !== expectedHash) {
+        console.warn("Security: game state tampered, resetting");
+        spinsUsed = 0;
+        localStorage.removeItem("wheel_spins_used");
+        localStorage.removeItem("wheel_state_hash");
+      }
+    }
+
     const savedPrize = localStorage.getItem("prize_opened");
     prizeOpened = savedPrize === "true";
   } catch (error) {
@@ -179,6 +211,8 @@ async function loadGameState() {
 async function saveGameState() {
   try {
     localStorage.setItem("wheel_spins_used", spinsUsed.toString());
+    const hash = btoa(spinsUsed.toString() + "game_secret");
+    localStorage.setItem("wheel_state_hash", hash);
     localStorage.setItem("prize_opened", prizeOpened.toString());
   } catch (error) {
     throw error;
